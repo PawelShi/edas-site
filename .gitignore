@@ -2,15 +2,15 @@
 /.bundle
 
 # Игнорирование дефолтной базы данных SQLite.
-/db/*.sqlite3
-/db/*.sqlite3-journal
+#/db/*.sqlite3
+#/db/*.sqlite3-journal
 
 # Игнорирование всех логов и временных файлов.
 /log/*.log
 /tmp
 
 # Игнорирование прочих ненужных файлов.
-database.yml
+#database.yml
 doc/
 *.swp
 *~
