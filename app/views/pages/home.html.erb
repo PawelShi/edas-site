@@ -1,2 +1,38 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!-- ---
+title: Главная
+layout: default
+author: PawelShi
+id: page-home
+--- -->
+
+<div class="container">
+  <div class="row ">
+    <!-- <div class="col-sm-6 col-md-6 col-lg-6"></div> -->
+    <div class="container col-sm-12 col-md-12 col-lg-12 col-md-offset-3">
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <%= image_box("home/energo.jpg", 'ЭЛЕКТРОЭНЕРГЕТИКА', tools_path) %>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <%= image_box("home/disp.jpg", 'ДИСПЕТЧЕРИЗАЦИЯ', tools_path) %>
+          
+        </div>
+      </div>
+      <!-- row2 -->
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <%= image_box("home/auto.jpg", 'АВТОМАТИЗАЦИЯ', tools_path) %>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <%= image_box("home/stroy.jpg", 'СТРОИТЕЛЬСТВО', tools_path) %>
+          
+        </div>
+      </div>
+      <!-- container 2 --> 
+      </div>
+      <div class="col-sm-6 col-md-6 col-lg-6">
+        <%= render "shared/news" %>
+      </div>
+    <!-- row 1 -->
+    </div>
+</div>

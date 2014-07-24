@@ -1,0 +1,11 @@
+<div class="heading ">
+<!-- Параметры переменной для всех страничек:
+Имя переменной: @current_page
+  .title - заголовок
+  .comment - комментарий
+
+ -->
+ 	<% unless @current_page[:title] == '' %>
+		<h3><%= @current_page[:title]%> </h3>
+	<% end %>
+</div>

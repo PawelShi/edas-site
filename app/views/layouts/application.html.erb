@@ -1,14 +1,26 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Edas</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
+
+<%= render 'layouts/head' %>
+
 <body>
+  <div class="top">
+    <!-- Тут должен быть баннер -->
+    <%= render "layouts/header" %>
+    <%= render 'layouts/navigation' %>
+  </div>
+  <div class="wrapper container">
+     
+    <%= render 'layouts/pageheader' %>
+               
+    <%= yield %>
+    
+  </div>
+  <%= render 'layouts/footer' %>
+  <!-- bootstrap -->
+  <%= javascript_include_tag "jquery-2.1.0.min.js" %>
+  <%= javascript_include_tag "bootstrap.min.js" %>
 
-<%= yield %>
-
+  
+  
 </body>
 </html>
