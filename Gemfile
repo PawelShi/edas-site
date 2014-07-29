@@ -36,8 +36,16 @@ end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
+group :development do
+  gem "capistrano"
+  gem "rvm-capistrano"
+end
+
 # Use unicorn as the app server
 # gem 'unicorn'
+group :production do
+  gem 'unicorn'
+end
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
