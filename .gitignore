@@ -17,4 +17,5 @@ doc/
 .project
 .DS_Store
 .idea
-.secret/config/deploy.rb
+.secret
+/config/deploy.rb

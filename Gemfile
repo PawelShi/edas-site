@@ -42,10 +42,10 @@ group :development do
 end
 
 # Use unicorn as the app server
-# gem 'unicorn'
-group :production do
-  gem 'unicorn'
-end
+ gem 'unicorn'
+# group :production do
+#   gem 'unicorn'
+# end
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
