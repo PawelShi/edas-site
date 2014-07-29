@@ -18,4 +18,4 @@ doc/
 .DS_Store
 .idea
 .secret
-/config/deploy.rb
+#/config/deploy.rb
