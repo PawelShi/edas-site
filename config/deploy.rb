@@ -1,7 +1,8 @@
 require "rvm/capistrano"
 require "bundler/capistrano"
 
-set :application, "edas site"
+set :application, "edas"
+set :domain, "edas@146.185.186.136" 
 set :shared_children, shared_children
 set :repository,  "git@github.com:PawelShi/edas-site.git"
 set :deploy_to, "/var/www/edas-site"
@@ -12,8 +13,14 @@ set :group, "www-data"
 set :use_sudo, false
 set :rails_env, "development"#"production"#test/development/production
 set :deploy_via, :copy
-# set :ssh_options, { :forward_agent => true, :port => 6629 }
+set :ssh_options, { :forward_agent => true, :port => 22 }
 set :keep_releases, 5
+set :rvm_type, :system
+
+# role :web, domain
+# role :app, domain
+# role :db,  domain, :primary => true
+
 default_run_options[:pty] = true
 server "146.185.186.136", :app, :web, :db, :primary => true
 
