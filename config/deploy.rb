@@ -4,7 +4,7 @@ require "bundler/capistrano"
 set :application, "edas"
 set :domain, "edas@146.185.186.136" 
 set :shared_children, shared_children  
-set :repository,  "https://github.com/PawelShi/edas-site.git"#"git@github.com:PawelShi/edas-site.git"
+set :repository,  "https://github.com/PawelShi/edas-site.git"
 set :deploy_to, "/var/www/edas-site"
 set :scm, :git
 set :branch, "master"
@@ -47,6 +47,7 @@ namespace :deploy do
   task :symlink_config, roles: :app do
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
     sudo "chmod 777 #{release_path}/config/unicorn_init.sh"
+    sudo "dos2unix #{release_path}/config/unicorn_init.sh"
     sudo "chmod 777 /etc/init.d/unicorn_#{application}"
   end
   after "deploy:finalize_update", "deploy:symlink_config"
