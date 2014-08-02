@@ -12,8 +12,8 @@ set -e
 
 # Feel free to change any of the following variables for your app:
 TIMEOUT=${TIMEOUT-60}
-# APP_ROOT=/var/www/edas-site/current
-APP_ROOT=/var/www/edas-site
+ APP_ROOT=/var/www/edas-site/current
+# APP_ROOT=/var/www/edas-site
 PID=$APP_ROOT/tmp/pids/unicorn.pid
 CMD="cd $APP_ROOT; bundle exec unicorn -D -d -c $APP_ROOT/config/unicorn.rb -E development"
 AS_USER=edas
