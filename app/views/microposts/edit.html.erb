@@ -1,0 +1,11 @@
+<div class="container-fluid">
+
+	<div class='navbar navbar-default'>
+		<div class='navbar-brand'>Изменить новость</div>
+		<%= link_to 'Просмотр', @micropost, :class => 'btn btn-info navbar-btn' %> 
+		<%= link_to 'К новостям', microposts_path, :class => 'btn btn-primary navbar-btn' %>
+	</div>
+
+	<%= render 'form' %>
+</div>
+

@@ -1,0 +1,38 @@
+<div class="container-fluid">
+
+  <%= render 'navbar' %>
+
+
+<table class='table table-striped'>
+  <thead>
+    <tr>
+      <th>Дата новости</th>
+      <th>Заголовок</th>
+      <th>Содержание</th>
+      <th class='hidden'>Автор</th>
+      <th>Действия</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @microposts.each do |micropost| %>
+      <tr>
+        <td><%= micropost.start_dt %></td>
+        <td><%= micropost.title %></td>
+        <td><%= micropost.content %></td>
+        <td class='hidden'><%= micropost.user_id %></td>
+        <td><%= link_to 'Просмотр', micropost, :class=>'btn btn-success' %></td>
+        <td><%= link_to 'Изменить', edit_micropost_path(micropost), :class=>'btn btn-warning' %></td>
+        <td><%= link_to 'Удалить', micropost, method: :delete, data: { confirm: 'Вы уверены?' }, 
+          :class=>'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+</div>

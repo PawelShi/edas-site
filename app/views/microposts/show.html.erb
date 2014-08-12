@@ -1,0 +1,33 @@
+<div class="container-fluid">
+	<div class='navbar navbar-default'>
+		<div class='navbar-brand'>Просмотр новости</div>
+		<%= link_to 'Изменить', edit_micropost_path(@micropost), :class => 'btn btn-info navbar-btn' %> 
+		<%= link_to 'К новостям', microposts_path, :class => 'btn btn-primary navbar-btn' %>
+	</div>
+
+<p id="notice"><%= notice %></p>
+<p class="caption">
+	<strong>Дата новости:</strong>
+</p>
+<p class="value">
+  	<%= @micropost.start_dt %>
+</p>
+
+
+<p>
+  <strong>Заголовок:</strong>
+  <%= @micropost.title %>
+</p>
+
+<p>
+  <strong>Текст новости:</strong>
+  <%= @micropost.content %>
+</p>
+
+<p>
+  <strong>Автор:</strong>
+  <%= @micropost.user_id %>
+</p>
+
+
+</div>

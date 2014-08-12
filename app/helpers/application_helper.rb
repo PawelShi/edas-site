@@ -10,4 +10,13 @@ module ApplicationHelper
         
         link_to(raw(str),url)
 	end
+
+	def page_title
+		unless @current_page.nil?
+			@current_page[:title]
+		else
+			'nil'
+		end
+
+	end
 end

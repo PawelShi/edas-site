@@ -1,5 +1,9 @@
 Edas::Application.routes.draw do
 
+  resources :users
+
+  resources :microposts
+
   root 'pages#home'
 
   get 'tools' => 'pages#tools'
