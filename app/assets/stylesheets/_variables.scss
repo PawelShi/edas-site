@@ -1,0 +1,87 @@
+
+
+/*Шрифт заголовка*/
+$brand-font: sans-serif; 
+/*Шрифт меню*/
+$menu-font: Arial, sans-serif; 
+/*основным шрифтом будет Tahoma*/
+$font-family-base: Helvetica, Georgia, Tahoma, sans-serif;
+// $header-font: 'AvantGardeGothicCTTRegular', Arial, sans-serif;
+$header-font: Arial, sans-serif;
+/*задаем базовый размер*/
+$font-size-base: 16px; 
+
+
+/*!!!!!!!!!!Цвета!!!!!!!!!!!!*/
+/*#EE7711    - Оранжевый 	 - Фон Брэнда
+#e0e0e0 - очень светло-серый - фон шапки
+#bababa - светло серый       - фон страницы
+#878787 - потемнее			 - фон подвала
+#4d4d4d - еще темнее
+*/
+/*серый фон страницы*/
+$body-bg: #bababa; 
+/*специфический голубой фон данного дизайна*/
+$brand-primary: black;/*#29c5e6; */
+/*Надпись, цвет и фон*/
+$brand-color: black;
+$brand-bg: #ee7711;
+
+
+/*фон панелей*/
+$panel-bg: #e0e0e0;
+/*цвет рамки панелей*/
+$panel-inner-border: #cfcfcf;
+/*убираем скругление у блоков*/
+$border-radius-base: 0;
+/*первичные кнопки имеют голубой фон*/
+$btn-primary-bg: $brand-primary; 
+/*если ширина экрана больше 992px, то ширина контейнера 960px*/
+/* $container-md: 960px; */
+/*если ширина экрана больше 1200px, то ширина контейнера так же 960px*/
+/* $container-lg: $container-md; */
+
+/*основной цвет текста на странице*/
+$text-color: black;
+/*серый фон текстовых полей*/
+$input-bg: $panel-bg;
+/*серая рамка текстовых полей*/
+$input-border: $panel-inner-border;
+/*серый цвет текста в полях*/
+$input-color: #b2b2b2;
+
+/*!!!!!!!!!! Число столбцов.!!!!*/
+$grid-columns: 24;
+
+
+/*----НАВИГАЦИЯ!!*/
+/*высота навигационного меню*/
+$navbar-height: 40px;
+
+/*задаем  побольше горизонтальный отступ*/
+$nav-link-padding: 10px 30px;
+
+/*фон для пунктов меню*/
+$navbar-default-bg: $panel-bg;
+
+/*цвет текста в пунктах меню*/
+$navbar-default-link-color: $brand-color;/*#7e7e7e;#b2b2b2;*/
+
+/*и при наведении мышки – такой же*/
+/*$navbar-default-link-hover-color: $brand-color; */
+/* $navbar-default-link-color; */
+
+/*фон активного пункта меню – наш специфический голубой цвет*/
+$navbar-default-link-active-bg: $brand-primary;
+
+/*цвет текста активного пункта меню*/
+$navbar-default-link-active-color: $brand-color;
+
+/*---- Подменю - слева */
+$list-group-bg: $panel-bg;
+$list-group-border: $panel-inner-border;
+
+/*слайды:  коэффициент ширина/высота = 0,7071*/
+$thumbnail-koeff: 0.7071;
+$thumbnail-width: 110px;
+$thumbnail-height:  $thumbnail-width/$thumbnail-koeff;

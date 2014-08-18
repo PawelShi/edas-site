@@ -1,0 +1,270 @@
+/*Переменные переопределяем перед импортом Bootstrap*/
+@import "variables";
+/*Импортируем bootstrap*/
+@import "bootstrap";
+@import "bootstrap-sprockets";
+
+
+
+p {
+    margin: 20px 0;
+}
+
+.form-control {
+    box-shadow: none;
+}
+
+.btn {
+    font-family: $brand-font;
+}  
+
+.my-center{
+  text-align: center;
+}
+.nomargin{
+  margin: 0;
+  // font-size: 90%;
+}
+
+.noborder {
+  border-width: 0;  
+}
+
+.nopadding{
+  padding: 0;
+}
+
+
+
+body {
+    border-top: 5px solid $brand-color;
+    // background-color: $body-bg;
+    // background-image: url(../images/bg.png);
+
+
+   .wrapper {
+        padding: 0 0 50px 0;
+        background-image: url(<%= image_path 'fon.png'%>);
+        background-position-x: 180%;
+        background-color: $body-bg;
+        // background-color: $text-color;
+        background-size: 70%;
+        background-repeat: no-repeat;
+
+        .thumbnail{
+          background-color: inherit;
+        }
+        .contacts{
+          border-width: 2px;
+          border-color: white;
+          p{
+            margin-top: 10px;
+            margin-bottom: 10px;
+          }
+          td {
+            vertical-align:middle;
+            // padding: 2;
+          }
+          td.caption{
+            color: white;
+            background-color: #878787;
+
+          }
+          td.value{
+            // text-align: center;
+          }
+          
+        }
+
+        .heading {
+            height: 40px;
+            background: transparent url(<%= image_path 'h1-bg.png' %>);
+            margin: 30px 0;
+            padding-left: 20px;
+
+            h1,h2,h3 {
+                display: inline-block;
+                color: #7e7e7e;
+                font: normal 40px/40px $font-family-base;
+                background-color: $body-bg;
+                // background: url(../images/bg.png);
+                margin: 0;
+                padding: 0 10px;
+                text-transform: uppercase;
+            }
+            
+        }
+    }
+    .top {
+      background-color: $panel-bg;
+    }
+
+    .news{
+       background: rgba(255,255,255,0.4)
+    }
+
+
+
+    .menu{
+        font-family: $menu-font;
+        font-size: 85%;
+        .navbar {
+          border-width: 0;
+          margin-bottom: 0;
+          // a{
+          //   font-weight: bold;
+          // }
+          li{
+            // border-right: 2px solid $brand-color;
+            width: 20%;
+            a {
+              // color: $brand-color;
+              // text-transform: uppercase;
+              // font: 16px $menu-font;
+              padding-left: 0;
+              text-decoration: none;
+              &:hover {
+                // color: $brand-primary;
+                font-weight: bold;
+                background-color: inherit;
+                  }
+              }
+
+          }
+          
+        }
+
+        .submenu {
+                margin-bottom: 30px;
+                a{
+                  font: 300 14px $menu-font;
+                  text-transform: uppercase;
+                }
+
+                li {
+                    display: list-item;
+                    font: 300 14px $menu-font;
+                    list-style-position: inside;
+                    list-style-type: square;
+                    padding: 10px;
+                    text-transform: uppercase;
+
+
+                    a {
+                        color: $text-color;
+                        text-decoration: none;
+                        
+                        &:hover {
+                            // color: $brand-primary;
+                        }
+                      }
+                }
+           }
+    }//menu
+    header {
+        // padding: 20px 0;
+        font-family: $menu-font;
+        
+
+        .arial, .arial div p{
+          font-family: Arial, sans-serif;
+          font-weight: bold;
+        }
+
+        .brand{
+          
+          background-color: $brand-bg;
+          color: #4d4d4d;//$brand-color;
+          font-size: 18px;
+
+        	#title{
+        		font-family: $brand-font;
+        		
+        	}
+          .margin{
+            margin-top: 20px;
+            margin-bottom: 20px;
+          }
+          table{
+            margin-bottom: 0;
+            td{
+              border-width: 0px;
+              padding-left: 0;
+              padding-right: 0;
+            }
+          }
+        }//brand
+    }
+
+    footer {
+      background: #7e7e7e;
+      color: #dbdbdb;
+  		  font-size: 11px;
+
+  		.container {			
+        	height: 110px;
+        	padding: 10px 0;
+
+        	h3 {
+              	border-bottom: 1px solid #919191;
+              	color: #ffffff;
+              	font-size: 14px;
+              	line-height: 21px;
+              	font-family: $header-font;
+              	margin: 0 0 10px;
+              	text-transform: uppercase;
+            }
+
+            p {
+              	margin: 5px 0;
+            }
+
+            .logo {
+              	float: right;
+              	margin-top: 20px;
+              	font-size: 10px;
+              	text-align: right;
+
+              	a {
+                    text-decoration: underline;
+                }
+            }
+
+    	}
+	}
+
+	// Изображение
+	table.thumbnail-list{
+	// таблица изображений
+        border-style: none;
+        td{
+        	border-top: 0;
+        }
+		td.thumbnail-td{
+			width: $thumbnail-width + 10px;
+			// height: $thumbnail-height + 3px;
+			.thumbnail{
+				width:auto;
+			}
+			.thumbnail-image{
+				width: $thumbnail-width;
+				height: $thumbnail-height;
+				max-width: $thumbnail-width;
+				border-style: none;
+				border-width: 0;
+			}
+		}
+		
+
+		td.title{
+			height:$font-size-base;
+			font-size: $font-size-base;
+			font-weight: bold;
+		}
+		td.caption{
+			font-size: $font-size-base;
+		}
+	}
+
+        
+}

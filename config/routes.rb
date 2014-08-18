@@ -1,5 +1,6 @@
 Edas::Application.routes.draw do
 
+  get 'admin' => "admin#index"
   resources :users
 
   resources :microposts

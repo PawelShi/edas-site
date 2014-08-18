@@ -26,6 +26,10 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     arel (4.0.2)
+    autoprefixer-rails (2.2.0.20140804)
+      execjs
+    bootstrap-sass (3.2.0.1)
+      sass (~> 3.2)
     builder (3.1.4)
     capistrano (2.15.5)
       highline
@@ -134,13 +138,15 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
+  bootstrap-sass (~> 3.2.0.1)
   capistrano
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.2)
   jquery-rails
   rails (= 4.0.2)
   rvm-capistrano
-  sass-rails (~> 4.0.0)
+  sass-rails (>= 3.2)
   sdoc
   sqlite3
   therubyracer

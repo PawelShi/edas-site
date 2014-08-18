@@ -1,13 +1,14 @@
 <div class='navbar navbar-default'>
 	<div class='navbar-brand'>
-		<%= mp_getTitle_navbar params[:action] %>
+		<%= nsi_getTitle_navbar params[:action] %>
 	</div>
 
 		
 	<%= link_to('Добавить новость', new_micropost_path, 
-		:class=>mp_get_btn_class_navbar(params[:action], 'new'))  %>
+		:class=>nsi_get_btn_class_navbar(params[:action], 'new'))  %>
 	<%= link_to('Просмотр', @micropost, 
-		:class=>mp_get_btn_class_navbar(params[:action], 'show')) %> 
+		:class=>nsi_get_btn_class_navbar(params[:action], 'show')) %> 
 	<%= link_to('К новостям', microposts_path, 
-		:class=>mp_get_btn_class_navbar(params[:action], 'list')) %>
+		:class=>nsi_get_btn_class_navbar(params[:action], 'list')) %>
+	<%= link_to "В администрирование", admin_path, :class => 'btn btn-default navbar-btn pull-right' %>
 </div>
