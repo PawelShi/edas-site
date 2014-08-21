@@ -7,6 +7,8 @@ class PagesController < ApplicationController
   	@current_page = {title: 'Услуги', 
         comment: ''#Описание всех возможных видов работ, что мы выполняем'
       }
+    @selected = 1
+    # @list_tools = {{id: 1, name: 'ЭЛЕКТРОЭНЕРГЕТИКА'}, {id: 2, name: 'ДИСПЕТЧЕРИЗАЦИЯ'}}
   end
 
   def projects

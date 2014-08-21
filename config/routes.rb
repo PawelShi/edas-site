@@ -10,6 +10,9 @@ Edas::Application.routes.draw do
   get 'tools' => 'pages#tools'
   get 'projects' => 'pages#projects'
   get 'contacts' => 'pages#contacts'
+  # страницы с услугами( кроме основных будут предоставлены и прочие)
+  # автоматизация
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
