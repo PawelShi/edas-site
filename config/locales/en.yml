@@ -21,3 +21,6 @@
 
 en:
   hello: "Hello world"
+  will_paginate:
+    previous_label: "&#8592; Пред."
+    next_label: "След. &#8594;"

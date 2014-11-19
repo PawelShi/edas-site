@@ -5,34 +5,22 @@ author: PawelShi
 id: page-home
 --- -->
 
-<div class="container">
-  <div class="row ">
-    <!-- <div class="col-sm-6 col-md-6 col-lg-6"></div> -->
-    <div class="container col-sm-12 col-md-12 col-lg-12 col-md-offset-3">
       <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-12">
-          <%= image_box("home/energo.jpg", 'ЭЛЕКТРОЭНЕРГЕТИКА', tools_path) %>
+          <%= image_box("home/energo.jpg", 'ЭЛЕКТРОЭНЕРГЕТИКА', tools_view_path(1)) %>
         </div>
         <div class="col-sm-12 col-md-12 col-lg-12">
-          <%= image_box("home/disp.jpg", 'ДИСПЕТЧЕРИЗАЦИЯ', tools_path) %>
+          <%= image_box("home/disp.jpg", 'ДИСПЕТЧЕРИЗАЦИЯ', tools_view_path(2)) %>
           
         </div>
       </div>
       <!-- row2 -->
       <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-12">
-          <%= image_box("home/auto.jpg", 'АВТОМАТИЗАЦИЯ', tools_path) %>
+          <%= image_box("home/auto.jpg", 'АВТОМАТИЗАЦИЯ', tools_view_path(3)) %>
         </div>
         <div class="col-sm-12 col-md-12 col-lg-12">
-          <%= image_box("home/stroy.jpg", 'СТРОИТЕЛЬСТВО', tools_path) %>
+          <%= image_box("home/stroy.jpg", 'СТРОИТЕЛЬСТВО', tools_view_path(4)) %>
           
         </div>
       </div>
-      <!-- container 2 --> 
-      </div>
-      <div class="col-sm-6 col-md-6 col-lg-6">
-        <%= render "shared/news" %>
-      </div>
-    <!-- row 1 -->
-    </div>
-</div>

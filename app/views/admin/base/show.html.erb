@@ -1,0 +1,30 @@
+<div class="container-fluid">
+	<%= nsi_navbar nsi_name %>
+
+<p id="notice"><%= notice %></p>
+	<% @data.
+<p class="caption">
+	<strong>Дата новости:</strong>
+</p>
+<p class="value">
+  	<%= @micropost.start_dt %>
+</p>
+
+
+<p>
+  <strong>Заголовок:</strong>
+  <%= @micropost.title %>
+</p>
+
+<p>
+  <strong>Текст новости:</strong>
+  <%= @micropost.content %>
+</p>
+
+<p>
+  <strong>Автор:</strong>
+  <%= @micropost.user_id %>
+</p>
+
+
+</div>

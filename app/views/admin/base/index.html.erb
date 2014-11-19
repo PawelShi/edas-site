@@ -1,0 +1,53 @@
+<div class="container-fluid">
+
+  <!-- < render 'navbar'  -->
+  
+  <%= nsi_navbar nsi_name %>
+
+<table class='table table-striped admin'>
+  <thead>
+    <tr>
+      <th class = "col-sm-1 col-md-1 col-lg-1">Id</th>
+    <% (@data.columns.count-3).times do |id| %>
+      <% cn=@data.columns[id+1].name %>
+      <% ct=ttt(@data.model)[cn.to_sym] %>
+      <th>
+        <%= ct[:title] %>  
+      </th>
+    <% end %>
+      <th>Действия</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @data.each do |record| %>
+      <tr>
+        <td> <%= record[:id].to_s %> </td>
+        <% (@data.columns.count-3).times do |id| %>
+          <% fld_nm = @data.columns[id+1].name %>
+          <td>
+            <%= record[fld_nm].to_s %>
+          </td>
+        <% end %>
+
+        <td class = "col-sm-2 col-md-2 col-lg-2">
+          <%= link_to 'Просмотр', eval(nsi_path(nsi_name, :show, {id: record[:id]})), :class=>'btn btn-success' %>
+        </td>
+        <td class = "col-sm-2 col-md-2 col-lg-2">
+          <%= link_to 'Изменить', eval(nsi_path(nsi_name, :edit, {id: record[:id]})), :class=>'btn btn-warning' %>
+        </td>
+        <td class = "col-sm-2 col-md-2 col-lg-2">
+          <%= link_to 'Удалить', '#', method: :delete, data: { confirm: 'Вы уверены?' }, 
+            :class=>'btn btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+</div>

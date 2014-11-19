@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<%= render 'layouts/head' %>
+
+<body>
+  <div class="top">
+    <!-- Тут должен быть баннер -->
+    <%= render "layouts/header" %>
+    <%= render 'layouts/navigation' %>
+  </div>
+  <div class="wrapper container">
+     
+   
+    <div class="container home">
+       
+        <%= yield %>
+      
+    </div>
+    
+  </div>
+  <%= render 'layouts/footer' %>
+  
+  
+</body>
+</html>

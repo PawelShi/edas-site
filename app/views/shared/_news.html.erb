@@ -3,13 +3,28 @@
 	<div class="panel-heading">
     	<h3 class="panel-title">НОВОСТИ</h3>
     </div>
-	<div class="panel-body">
+    <div class="panel-body">
+    
+    <% @microposts.each do |post| %>
+
+		<!-- <a class="post" href="#"> -->
 		<div class="post">
-			<h4>Заголовок новости</h4>
-			<p>
-				Текст новостной, урезанный до 200 символов.</p>
+			<h5><%= post.title%></h5>
+			<blockquote><small>
+			<% if post.content.length > 70 %>
+				<%= post.content[0..70]%>
+				<a href="#">...</a>
+			<% else %>
+				<%= post.content %>
+			<%  end %>
+			</small></blockquote>
+
 		</div>
 		
+		<hr/>
+		
+	<% end %>
 	</div>
+	<%= will_paginate @microposts %>
 </div>
 

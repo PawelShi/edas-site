@@ -4,6 +4,9 @@
 @import "bootstrap";
 @import "bootstrap-sprockets";
 
+@import "markitup/skins/markitup/style";
+@import "markitup/sets/markdown/style";
+
 
 
 p {
@@ -53,6 +56,12 @@ body {
 
         .thumbnail{
           background-color: inherit;
+        }
+        .row{
+          &.home {
+            margin-top: 30px;
+            margin-bottom: 30px;
+          }
         }
         .contacts{
           border-width: 2px;
@@ -129,6 +138,17 @@ body {
                 background-color: inherit;
                   }
               }
+            &.active{
+              color:$brand-bg;
+              font-weight: bold;
+              background-color: inherit;
+              a{
+                color: inherit;
+                font-weight: inherit;
+                background-color: inherit;
+              }
+
+            }
 
           }
           
@@ -233,6 +253,13 @@ body {
     	}
 	}
 
+  table.admin{
+    th{
+      text-align: center;
+      
+    }
+  }
+
 	// Изображение
 	table.thumbnail-list{
 	// таблица изображений
@@ -267,4 +294,71 @@ body {
 	}
 
         
+}
+div{
+  &.text-body{
+    text-indent: 3em;
+    ul li {
+      text-indent: 0;
+    }
+  }
+}
+div.show{
+
+  .value{
+    border-width: 2px;
+    border-style: solid;
+    border-color: $panel-inner-border;
+    border-radius: 5px;
+    background-color: $panel-bg;
+  }
+}
+ 
+a.post {
+      /*color:yellow;*/
+      text-transform: none;
+      text-decoration: none;
+      
+      &:hover {
+        /*color:red;*/
+        text-decoration: none;
+      }
+        
+}
+.panel{
+  .panel-body{
+    hr{
+      margin:11px;
+      margin-top: 0px;
+    }
+  }
+  .pagination{
+    margin:11px;
+    margin-top: 0px;
+    .pagination {
+      margin: 11px;
+    }
+  }
+
+}
+
+section{
+  .pagination{
+    margin-bottom: 5px;
+    margin-top: 0px;
+  }
+}
+
+blockquote {
+  a {
+    &:hover {
+      color: $brand-bg;
+      background-color: $panel-bg;
+      text-decoration: none;
+    }
+  }
+}
+.clr-brand{
+  color: $brand-bg;
+  font-weight: bold;
 }

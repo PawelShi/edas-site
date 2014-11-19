@@ -15,5 +15,9 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
+//= require markitup
+//   require markitup/sets/markdown/set
 //= require_tree .
+
+
 

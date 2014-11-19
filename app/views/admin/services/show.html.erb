@@ -1,0 +1,24 @@
+<div class="container-fluid">
+	<%= nsi_navbar :service %>
+
+<p id="notice"><%= notice %></p>
+<p class="caption">
+	<strong>Наименование:</strong>
+</p>
+<p class="value">
+  	<%= @service.name %>
+</p>
+
+
+<p>
+  <strong>Содержание описания:</strong>
+  <%= markdown(@service.content) %>
+</p>
+
+<p>
+  <strong>Порядок:</strong>
+  <%= @service.sort %>
+</p>
+
+
+</div>

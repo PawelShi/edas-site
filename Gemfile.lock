@@ -30,6 +30,8 @@ GEM
       execjs
     bootstrap-sass (3.2.0.1)
       sass (~> 3.2)
+    bootstrap-will_paginate (0.0.10)
+      will_paginate
     builder (3.1.4)
     capistrano (2.15.5)
       highline
@@ -61,6 +63,8 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    markitup-rails (1.1.3)
+      rails (>= 3.1)
     mime-types (1.25.1)
     minitest (4.7.5)
     multi_json (1.10.1)
@@ -92,6 +96,7 @@ GEM
     rake (10.3.2)
     rdoc (4.1.1)
       json (~> 1.4)
+    redcarpet (3.1.2)
     ref (1.0.5)
     rvm-capistrano (1.5.3)
       capistrano (~> 2.15.4)
@@ -133,6 +138,7 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    will_paginate (3.0.7)
 
 PLATFORMS
   ruby
@@ -140,11 +146,14 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bootstrap-sass (~> 3.2.0.1)
+  bootstrap-will_paginate
   capistrano
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.2)
   jquery-rails
+  markitup-rails
   rails (= 4.0.2)
+  redcarpet
   rvm-capistrano
   sass-rails (>= 3.2)
   sdoc
@@ -153,3 +162,4 @@ DEPENDENCIES
   turbolinks
   uglifier (>= 1.3.0)
   unicorn
+  will_paginate

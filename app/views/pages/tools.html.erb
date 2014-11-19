@@ -1,51 +1,23 @@
-<!-- ---
-layout: default
-title: Услуги
-comment: Описание всех возможных видов работ, что мы выполняем
-используем переменную - какой пункт выбран
---- -->
-<div class="container">
-	<blockquote>
-		<p class="lead">Наша компания оказывает огромный спектр услуг и решает множество задач. Ниже предоставлен список основных направлений нашей деятельности.</p>
-	</blockquote>
+
 <div class="row">
 	
 	<aside class="col-md-7">
 		<div class="list-group submenu">
-			<a href="#" class="list-group-item active">
-				ЭЛЕКТРОЭНЕРГЕТИКА
-			</a>
-			<a href="#" class="list-group-item">
-				ДИСПЕТЧЕРИЗАЦИЯ
-			</a>
-			<a href="#" class="list-group-item">
-				АВТОМАТИЗАЦИЯ
-			</a>
-			<a href="#" class="list-group-item">
-				СТРОИТЕЛЬСТВО
-			</a>
-			<a href="#" class="list-group-item">
-				Архитектура
-			</a>
-			<a href="#" class="list-group-item">
-				Малоэтажное строительство
-			</a>
-			<a href="#" class="list-group-item">
-				Проектирование
-			</a>
-
+		<% @services.each do |srv| %>
+			
+			<% if srv.id.to_s == params[:id].to_s then a = 'active' else a = '' end%>
+			
+			<%= link_to srv.name, tools_view_path(srv), :class => "list-group-item #{a}" %>
+		<% end %>
 		</div>
 	</aside>
 	<section class="col-md-17">
 		
-		<div class="jumbotron">
-        <blockquote>
-            <p>
-                Тут будут располагаться описания вида деятельности.
-            </p>
-            <small>Это такое предложение.</small>
-        </blockquote>
-    	</div>
+		    <% if @service then %>
+            	<%= markdown(@service.content) %>
+            <% else %>
+            	<p> Тут будет описание! </p>
+            <% end %>
+        
 	</section>
-</div>
 </div>

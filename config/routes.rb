@@ -1,15 +1,35 @@
 Edas::Application.routes.draw do
 
-  get 'admin' => "admin#index"
-  resources :users
+  
 
-  resources :microposts
+  # Админка
+  namespace :admin do
+    # get 'admin' => "admin#index"
+    
+    root "admin#index"
+    resources :users
+    resources :microposts
+    resources :services
+    resources :tags
+    resources :projects
+  end
+
+  # Странички
 
   root 'pages#home'
 
-  get 'tools' => 'pages#tools'
+# УСЛУГИ
+  get 'tools' => 'pages#tools', as: :tools
+  # ИМЕНОВАННЫЙ МАРШРУТ для перехода на просмотр  услуги
+  get 'tools/:id' => 'pages#tools', as: :tools_view
+
   get 'projects' => 'pages#projects'
   get 'contacts' => 'pages#contacts'
+  get 'about'    => 'pages#about'
+
+  # Превь markdown
+  post "markdown/preview"
+  
   # страницы с услугами( кроме основных будут предоставлены и прочие)
   # автоматизация
   

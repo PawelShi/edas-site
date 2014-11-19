@@ -11,6 +11,13 @@ gem 'sass-rails', '>= 3.2'
 gem 'bootstrap-sass', '~> 3.2.0.1'
 gem 'autoprefixer-rails' #Добавляет префикс браузера
 
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
+
+# Markdown gem 
+gem 'redcarpet'
+gem 'markitup-rails'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 

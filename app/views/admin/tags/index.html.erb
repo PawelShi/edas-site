@@ -1,0 +1,31 @@
+<div class="container-fluid">
+
+  <!-- < render 'navbar'  -->
+  <%= nsi_navbar :tag %>
+
+<table class='table table-striped'>
+  <thead>
+    <tr>
+      <th>Тэг</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tags.each do |record| %>
+      <tr>
+        <td> <%= record.name %></td>
+        <td><%= link_to 'Просмотр', eval(nsi_path(nsi_name, :show, {id: record[:id]})), :class=>'btn btn-success' %></td>
+        <td><%= link_to 'Изменить', eval(nsi_path(nsi_name, :edit, {id: record[:id]})), :class=>'btn btn-warning' %></td>
+        <td><%= link_to 'Удалить', eval(nsi_path(nsi_name, :show, {id: record[:id]})), method: :delete, data: { confirm: 'Вы уверены?' }, 
+          :class=>'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+</div>

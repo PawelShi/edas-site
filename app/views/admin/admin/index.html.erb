@@ -1,0 +1,28 @@
+<div class="container-fluid">
+	<h3 >Справочники</h3>	
+	<div class="list-group">
+		
+		<a href="<%= eval(nsi_path(:micropost, :list, params)) %>" class="list-group-item">
+			<h4 class="list-group-item-heading">Новости</h4>
+    		<p class="list-group-item-text">Управление новостной лентой. Создание, редактирование и удаление новостей.</p>
+    	</a>
+    	<a href="<%= eval(nsi_path(:user, :list, params)) %>" class="list-group-item">
+			<h4 class="list-group-item-heading">Пользователи</h4>
+    		<p class="list-group-item-text">Управление пользователями. Создание, редактирование и удаление пользователей, обладающих административными или правами редакторов.</p>
+    	</a>
+    	<a href="<%= eval(nsi_path(:service, :list, params)) %>" class="list-group-item">
+			<h4 class="list-group-item-heading">Услуги</h4>
+    		<p class="list-group-item-text">Изменение списка услуг.Возможность задать не только имя, но и содержание и порядок вывода.</p>
+    	</a>
+        <a href="<%= eval(nsi_path(:project, :list, params)) %>" class="list-group-item">
+            <h4 class="list-group-item-heading">Проекты</h4>
+            <p class="list-group-item-text">Список проектов, которые выкладываются для общего доступа.</p>
+        </a>
+    	<a href="<%= eval(nsi_path(:tag, :list, params)) %>" class="list-group-item">
+			<h4 class="list-group-item-heading">Тэги</h4>
+    		<p class="list-group-item-text">Список различных тэгов, на которые будут ссылаться проекты.</p>
+    	</a>
+		
+
+	</div>
+</div>

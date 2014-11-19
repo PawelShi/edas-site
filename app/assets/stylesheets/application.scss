@@ -10,5 +10,9 @@
  *
  * require bootstrap
  *= require_self
+  require markitup/skins/markitup/style
+  require markdown
  *= require_tree .
+ 
+
  */

@@ -8,37 +8,42 @@ gallery: projects/
  -->
 <div class="row">
 	
-	<aside class="col-md-7">
+	<aside class="col-md-6">
 		<div class="list-group submenu">
-			<a href="#" class="list-group-item active">
-				<span class="badge">3</span>
-				<span class="badge negative">4</span>
-				Нефтяная отрасль
+			<a href="<%= projects_path %>" class="list-group-item <%= 'active' if @tag.nil? %>">
+					<span class="badge"><%= Project.count %></span>
+					Все проекты
 			</a>
-			<a href="#" class="list-group-item">
-				<span class="badge">10</span>
-				Строительство
-			</a>
-			<a href="#" class="list-group-item">
-				<span class="badge">21</span>
-				Архитектура
-			</a>
-			<a href="#" class="list-group-item">
-				<span class="badge">12</span>
-				Малоэтажное строительство
-			</a>
+			<% Tag.all.order('name').each do |tag| %>
+				<a href=<%= "#{projects_path}/?tag=#{tag.id}" %> 
+					class="list-group-item <%= 'active' if @tag == tag.id.to_s %>">
+					<span class="badge"> <%= tag_used tag.id %></span>
+					<%= tag.name %>
+				</a>
+
+			<% end %>
+
 		</div>
 	</aside>
-	<section class="col-md-17">
+	<section class="col-md-18">
 		
-		<div class="jumbotron">
-        <blockquote>
-            <p>
-                Тут будут располагаться описания проектов и файлы картинок по проектам.
-            </p>
-            <small>Это такое предложение.</small>
-        </blockquote>
-    	</div>
+		<% unless @project.nil? then %>
+            <%= markdown(@project.body) %>
+        <% else %>
+    		<%= will_paginate @projects %>    
+			<div>
+			  <% @projects.each do |prj| %>
+				<blockquote>
+			  	  <a href=<%= "#{projects_path}/?project=#{prj.id}" %> >
+        			<h4> <%= prj.name %> </h4>
+            		<small>ОТРАСЛИ: <%= get_tags_str prj %></small>
+        	  	  </a>
+        		</blockquote>
+          	  <% end %>
+
+    		</div>
+    		<%= will_paginate @projects %>
+    	<% end %>
 	</section>
 </div>
 

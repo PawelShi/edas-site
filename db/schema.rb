@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140821105621) do
+ActiveRecord::Schema.define(version: 20141002095200) do
 
   create_table "microposts", force: true do |t|
     t.date     "start_dt"
@@ -22,6 +22,23 @@ ActiveRecord::Schema.define(version: 20140821105621) do
     t.text     "content"
   end
 
+  create_table "projects", force: true do |t|
+    t.string   "name",       limit: 100
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "projects", ["name"], name: "index_projects_on_name", unique: true
+
+  create_table "projects_tags", id: false, force: true do |t|
+    t.integer "project_id"
+    t.integer "tag_id"
+  end
+
+  add_index "projects_tags", ["project_id"], name: "index_projects_tags_on_project_id"
+  add_index "projects_tags", ["tag_id"], name: "index_projects_tags_on_tag_id"
+
   create_table "services", force: true do |t|
     t.string   "name",       limit: 30
     t.text     "content"
@@ -31,6 +48,12 @@ ActiveRecord::Schema.define(version: 20140821105621) do
   end
 
   add_index "services", ["name"], name: "index_services_on_name", unique: true
+
+  create_table "tags", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"

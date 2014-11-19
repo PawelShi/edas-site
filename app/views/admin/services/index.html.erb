@@ -1,0 +1,36 @@
+<div class="container-fluid">
+
+  <%= nsi_navbar :service %>
+
+
+<table class='table table-striped'>
+  <thead>
+    <tr>
+      <th>Наименование</th>
+      <th>Содержимое</th>
+      <th>Порядок</th>
+      <th>Действия</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @services.each do |srv| %>
+      <tr>
+        <td><%= srv.name %></td>
+        <td><%= srv.content[0..50]+' ...' %></td>
+        <td><%= srv.sort %></td>
+        <td><%= link_to 'Просмотр', admin_service_path(srv), :class=>'btn btn-success' %></td>
+        <td><%= link_to 'Изменить', edit_admin_service_path(srv), :class=>'btn btn-warning' %></td>
+        <td><%= link_to 'Удалить', admin_service_path(srv), method: :delete, data: { confirm: 'Вы уверены?' }, 
+          :class=>'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+</div>

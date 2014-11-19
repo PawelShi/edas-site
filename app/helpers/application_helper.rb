@@ -19,4 +19,44 @@ module ApplicationHelper
 		end
 
 	end
+
+	def nav_active(logic)
+		result = ''
+		result = "class=active" if logic == params[:action]
+		result
+	end
+
+	def markdown(text)
+    	renderer = Redcarpet::Render::HTML.new(hard_wrap: true, filter_html: true)
+    	options = {
+        	autolink: true,
+        	no_intra_emphasis: true,
+	        fenced_code_blocks: true,
+	        lax_html_blocks: true,
+	        strikethrough: true,
+	        superscript: true,
+	        space_after_headers: true
+    	}
+    	Redcarpet::Markdown.new(renderer, options).render(text).html_safe
+  	end
+
+  	def tag_used(tag_id)
+  		
+  		Tag.joins("join projects_tags pt on pt.tag_id = tags.id").where(:id => tag_id).count
+
+  	end
+
+  	def get_tags(project)
+		# Возвращает список тэгов
+		project.tags
+	end
+
+	def get_tags_str(project)
+		res = ''
+		project.tags.each do |tag|
+			res = "#{res} #{tag.name};"
+		end
+		res
+	end
+	
 end
