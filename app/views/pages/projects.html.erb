@@ -28,7 +28,10 @@ gallery: projects/
 	<section class="col-md-18">
 		
 		<% unless @project.nil? then %>
-            <%= markdown(@project.body) %>
+			<div class="project">
+				<blockquote><%= @project.name %></blockquote>
+            	<%= markdown(@project.body) %>
+            </div>
         <% else %>
     		<%= will_paginate @projects %>    
 			<div>

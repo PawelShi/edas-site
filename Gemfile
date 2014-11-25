@@ -15,8 +15,11 @@ gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 
 # Markdown gem 
-gem 'redcarpet'
-gem 'markitup-rails'
+# gem 'redcarpet'
+# Редактор контента
+# gem 'tinymce-rails'
+# gem 'tinymce-rails-langs'
+# gem 'tinymce-rails-imageupload'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

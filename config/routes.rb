@@ -26,9 +26,13 @@ Edas::Application.routes.draw do
   get 'projects' => 'pages#projects'
   get 'contacts' => 'pages#contacts'
   get 'about'    => 'pages#about'
+  get 'news'     => 'pages#news'
+  # get 'news/:id' => 'pages#news', as: :news_view
 
   # Превь markdown
   post "markdown/preview"
+
+  # post '/tinymce_assets' => 'tinymce_assets#create'
   
   # страницы с услугами( кроме основных будут предоставлены и прочие)
   # автоматизация

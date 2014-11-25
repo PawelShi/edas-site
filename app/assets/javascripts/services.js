@@ -1,49 +1,46 @@
-myMarkdownSettings = {
-    previewParserPath: "/markdown/preview",
-    previewInWindow: 'width=800, height=600, resizable=yes, scrollbars=yes',
-    onShiftEnter:       {keepDefault:false, openWith:'\n\n'},
-    markupSet: [
-        {name:'First Level Heading', key:'1', placeHolder:'Your title here...', closeWith:function(markItUp) { return miu.markdownTitle(markItUp, '=') } },
-        {name:'Second Level Heading', key:'2', placeHolder:'Your title here...', closeWith:function(markItUp) { return miu.markdownTitle(markItUp, '-') } },
-        {name:'Heading 3', key:'3', openWith:'### ', placeHolder:'Your title here...' },
-        {name:'Heading 4', key:'4', openWith:'#### ', placeHolder:'Your title here...' },
-        {name:'Heading 5', key:'5', openWith:'##### ', placeHolder:'Your title here...' },
-        {name:'Heading 6', key:'6', openWith:'###### ', placeHolder:'Your title here...' },
-        {separator:'---------------' },
-        {name:'Bold', key:'B', openWith:'**', closeWith:'**'},
-        {name:'Italic', key:'I', openWith:'_', closeWith:'_'},
-        {separator:'---------------' },
-        {name:'Bulleted List', openWith:'- ' },
-        {name:'Numeric List', openWith:function(markItUp) {
-            return markItUp.line+'. ';
-        }},
-        {separator:'---------------' },
-        {name:'Picture', key:'P', replaceWith:'![[![Alternative text]!]]([![Url:!:http://]!] "[![Title]!]")'},
-        {name:'Link', key:'L', openWith:'[', closeWith:']([![Url:!:http://]!] "[![Title]!]")', placeHolder:'Your text to link here...' },
-        {separator:'---------------'},
-        {name:'Quotes', openWith:'> '},
-        {name:'Code Block / Code', openWith:'(!(\t|!|`)!)', closeWith:'(!(`)!)'},
-        {separator:'---------------'},
-        {name:'Preview', call:'preview', className:"preview"}
-    ]
-}
+<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+// <script src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" 
+//     type="text/javascript">
+//     <script type="text/javascript">
+//         ymaps.ready(init);
 
-// mIu nameSpace to avoid conflict.
-miu = {
-    markdownTitle: function(markItUp, char) {
-        heading = '';
-        n = $.trim(markItUp.selection||markItUp.placeHolder).length;
-        for(i = 0; i < n; i++) {
-            heading += char;
+//         function init () {
+//             var myMap = new ymaps.Map('map', {
+//                 center: [55.76, 37.64], 
+//                 zoom: 10
+//             });
+//         }
+//     </script>
+
+
+
+// </script>
+<script type="text/javascript">
+        ymaps.ready(init);
+        var myMap, 
+            myPlacemark;
+
+        function init(){ 
+            myMap = new ymaps.Map ("map", {
+                center: [57.996401, 56.304498],
+                zoom: 17,
+                type: "yandex#map",
+                behaviors: ["default", "scrollZoom"],
+                type: "yandex#publicMap"
+            }); 
+            
+            myPlacemark = new ymaps.Placemark([57.996401, 56.304498], {
+                hintContent: 'ООО "ЭДАС"',
+                balloonContent: 'Расположение офиса ООО "ЭДАС" - каб.318'
+            });
+            
+            myMap.geoObjects.add(myPlacemark);
+            myMap.controls.add('mapTools');
+            myMap.controls.add('typeSelector');
+            myMap.controls.add('zoomControl');
+            myMap.controls.add('scaleLine');
         }
-        return '\n'+heading;
-    }
-}
+    </script>
 
 
 
-  // $('#markdown').markItUp(myMarkdownSettings)
-
-  $(document).ready(function() {
-      $("#markdown").markItUp(myMarkdownSettings);
-   });

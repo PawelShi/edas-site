@@ -4,9 +4,6 @@
 @import "bootstrap";
 @import "bootstrap-sprockets";
 
-@import "markitup/skins/markitup/style";
-@import "markitup/sets/markdown/style";
-
 
 
 p {
@@ -108,9 +105,8 @@ body {
       background-color: $panel-bg;
     }
 
-    .news{
-       background: rgba(255,255,255,0.4)
-    }
+    
+
 
 
 
@@ -292,9 +288,32 @@ body {
 			font-size: $font-size-base;
 		}
 	}
+  .news{
+       background: rgba(255,255,255,0.4);
+       .post{
+          font-size: 75%;
+          padding: 0 10px;
+          margin: 0 0 5px;
+          /*font-size: 20px;*/
+          border-left: 5px solid #eeeeee;
+          h5 {
+            margin-top: 0;
+            margin-bottom: 5px;
+          }
+          p{
+            margin: 5px 0;
+          }
 
+       }
+      div.pagination{
+            margin: 0;
+            font-size: 75%;
+      }
+  } /*news*/
         
-}
+}/*body*/
+
+
 div{
   &.text-body{
     text-indent: 3em;

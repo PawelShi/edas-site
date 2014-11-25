@@ -15,8 +15,8 @@
 			<p>Телефон: +7 (342) 207-42-11<br/>
 				Факс: +7 (342) 207-42-12
 			</p>
-			<p>E-mail: edas-perm@yandex.ru</p>
-			<p>www.edas-perm.ru</p>
+			<p class="clr-brand"><a href='mailto:edas-perm@yandex.ru'>E-mail: edas-perm@yandex.ru</a></p>
+			<p><a href='www.edas-design.ru'> www.edas-design.ru </a></p>
 		</div>
 	<!-- </div> -->
   <!-- </div> -->
@@ -28,30 +28,3 @@
   <!-- </div>	 -->
 </div>
 
-<script src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
-<script type="text/javascript">
-        ymaps.ready(init);
-        var myMap, 
-            myPlacemark;
-
-        function init(){ 
-            myMap = new ymaps.Map ("map", {
-                center: [57.996401, 56.304498],
-                zoom: 17,
-                type: "yandex#map",
-                behaviors: ["default", "scrollZoom"],
-                type: "yandex#publicMap"
-            }); 
-            
-            myPlacemark = new ymaps.Placemark([57.996401, 56.304498], {
-                hintContent: 'ООО "ЭДАС"',
-                balloonContent: 'Расположение офиса ООО "ЭДАС" - каб.240'
-            });
-            
-            myMap.geoObjects.add(myPlacemark);
-            myMap.controls.add('mapTools');
-            myMap.controls.add('typeSelector');
-            myMap.controls.add('zoomControl');
-            myMap.controls.add('scaleLine');
-        }
-    </script>

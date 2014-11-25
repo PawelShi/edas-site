@@ -60,9 +60,18 @@ class PagesController < ApplicationController
       }
   end
 
+  def news
+    @news  = params[:news]
+    unless @news.nil? 
+      @news = Micropost.find(@news)
+    else
+      @news = Micropost.first
+    end
+  end
+
   private 
   def news_data
-    @microposts = Micropost.paginate(:page => params[:page], :per_page => 3).order( 'start_dt DESC')
+    @microposts = Micropost.paginate(:page => params[:page], :per_page => 5).order( 'start_dt DESC')
   end
 
 end

@@ -9,15 +9,18 @@
 
 		<!-- <a class="post" href="#"> -->
 		<div class="post">
+			
 			<h5><%= post.title%></h5>
-			<blockquote><small>
+			<p class="text-justify">
+			<!-- <blockquote><small> -->
 			<% if post.content.length > 70 %>
 				<%= post.content[0..70]%>
-				<a href="#">...</a>
+				<a href=<%= "#{news_path}/?news=#{post.id}"%> class="clr-brand"> далее>></a>
 			<% else %>
 				<%= post.content %>
 			<%  end %>
-			</small></blockquote>
+			</p>
+			<!-- </small></blockquote> -->
 
 		</div>
 		
