@@ -14,10 +14,10 @@
 			<p class="text-justify">
 			<!-- <blockquote><small> -->
 			<% if post.content.length > 70 %>
-				<%= post.content[0..70]%>
+				<%= raw(post.content[0..70])%>
 				<a href=<%= "#{news_path}/?news=#{post.id}"%> class="clr-brand"> далее>></a>
 			<% else %>
-				<%= post.content %>
+				<%= raw(post.content) %>
 			<%  end %>
 			</p>
 			<!-- </small></blockquote> -->
