@@ -35,6 +35,7 @@ namespace :deploy do
   end
 
   task :setup_config, roles: :app do
+    puts "---- ЛИНКИ task :setup_config, roles: :app do"
     sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{application}"
     sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
 
@@ -45,6 +46,7 @@ namespace :deploy do
   after "deploy:setup", "deploy:setup_config"
 
   task :symlink_config, roles: :app do
+    puts "---- CHMOD task :symlink_config, roles: :app do"
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
     sudo "chmod 777 #{release_path}/config/unicorn_init.sh"
     sudo "dos2unix #{release_path}/config/unicorn_init.sh"
