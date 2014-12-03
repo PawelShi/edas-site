@@ -30,6 +30,7 @@ gallery: projects/
 		<% unless @project.nil? then %>
 			<div class="project">
 				<blockquote><%= @project.name %></blockquote>
+				<p>---------</p>
             	<%= markdown(@project.body) %>
             </div>
         <% else %>

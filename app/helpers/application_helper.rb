@@ -60,5 +60,36 @@ module ApplicationHelper
 		end
 		res
 	end
+
+	def gallery(path, gallery_name, count, cols)
+		# Создание галереи
+		pref="<div class='container-fluid'>	<h3 class='clr-brand'>#{gallery_name}</h3>"
+
+		if (cols > 0) and (count > cols)
+		
+			# Проходим по числу изображений
+			curr_row = 0 
+			# строка текущая
+			str = "<div class='row'>"
+			count-1.times do |num|
+				str = "#{str} <img src='#{path}/240/img_#{num+1}.jpg' alt='...' class='img-thumbnail'>"
+
+				next_row = num+1/cols
+				# если следующая строка будет новая - вставить нужно
+				if next_row>curr_row 
+					str = "#{str}</div><div class='row'>"
+					curr_row = next_row
+				end
+			end
+			unless (count+1/cols)>curr_row
+				str = "#{str}</div>"
+			end
+
+			
+		end
+
+		res ="#{pref}#{str}</div>"
+		res
+	end
 	
 end
