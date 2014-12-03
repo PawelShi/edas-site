@@ -64,6 +64,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
+    mini_portile (0.6.1)
     minitest (4.7.5)
     multi_json (1.10.1)
     net-scp (1.2.1)
@@ -73,6 +74,8 @@ GEM
     net-ssh (2.9.1)
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
+    nokogiri (1.6.5)
+      mini_portile (~> 0.6.0)
     polyglot (0.3.5)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -148,6 +151,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.2)
   jquery-rails
+  nokogiri
   rails (= 4.0.2)
   rvm-capistrano
   sass-rails (>= 3.2)

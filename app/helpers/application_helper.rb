@@ -27,7 +27,10 @@ module ApplicationHelper
 	end
 
 	def markdown(text)
-		raw(text)
+
+		doc = my_parse(text)
+		# puts doc
+		raw(doc)
 
 		# renderer = Redcarpet::Render::HTML.new(hard_wrap: true, filter_html: true)
   #   	options = {
@@ -61,9 +64,31 @@ module ApplicationHelper
 		res
 	end
 
+	def my_parse(text)
+		# Ищем наши вставки в тексте и заменяем
+		# TEXT - кусок HTML документа
+		# Самая первая вставка - галлерея
+		doc = Nokogiri::HTML::DocumentFragment.parse(text)
+		# 
+		gals = doc.css("gallery")
+		gals.each do |gal|
+			# читаем параметры галлереи
+			str = eval("gallery(#{gal.content})")
+			# puts str
+			sub_doc = Nokogiri::HTML::DocumentFragment.parse(str)
+			# меняем
+			gal.name="div"
+			gal['class'] = 'container-fluid'
+			gal.content = ''
+			sub_doc.parent = gal
+		end
+		doc.to_html
+	end
+
 	def gallery(path, gallery_name, count, cols)
 		# Создание галереи
-		pref="<div class='container-fluid'>	<h3 class='clr-brand'>#{gallery_name}</h3>"
+		pref="<h3 class='clr-brand'>#{gallery_name}</h3>"
+		# puts path
 
 		if (cols > 0) and (count > cols)
 		
@@ -71,24 +96,28 @@ module ApplicationHelper
 			curr_row = 0 
 			# строка текущая
 			str = "<div class='row'>"
-			count-1.times do |num|
+			# puts "count:#{count}"
+			count.times do |num|
+				# puts "num:#{num}"
 				str = "#{str} <img src='#{path}/240/img_#{num+1}.jpg' alt='...' class='img-thumbnail'>"
 
-				next_row = num+1/cols
+				next_row = (num+1)/cols
+				# puts "num = #{num} | cur = #{curr_row} | next = #{next_row}"
 				# если следующая строка будет новая - вставить нужно
 				if next_row>curr_row 
 					str = "#{str}</div><div class='row'>"
 					curr_row = next_row
 				end
 			end
-			unless (count+1/cols)>curr_row
+			unless (count/cols)>curr_row
 				str = "#{str}</div>"
 			end
 
 			
 		end
-
-		res ="#{pref}#{str}</div>"
+        # puts str
+		res ="#{pref}#{str}"
+		# puts res
 		res
 	end
 	

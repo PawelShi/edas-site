@@ -61,6 +61,8 @@ end
 #   gem 'unicorn'
 # end
 
+gem 'nokogiri'
+
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
