@@ -1,0 +1,54 @@
+<h3>Документы:</h3>
+	<div class="row nobody">
+		<div class="col-sm-6 col-md-6"	>
+			<%= slide_view('iso','license.jpg',"Разрешение", 'Разрешение на применение знака соответствия') %>
+		</div>
+		
+	</div>
+	<h4>Сертификаты соответствия:</h4>
+	<div class="row nobody">
+  		<div class="col-sm-6 col-md-6">
+    		<%= slide_view('iso','sertificate_smk_edas.jpg',"Сертификат СМК", 'Сертификат соответствия ЭДАС') %>
+  		</div>
+  		<div class="col-sm-6 col-md-6">
+    		<%= slide_view('iso','sertificate_expert_vavilin.jpg',"Сертификат ", 'Сертификат соответствия Вавилин Р. Е.') %>
+  		</div>
+  		<div class="col-sm-6 col-md-6">
+    		<%= slide_view('iso','sertificate_expert_budilova.jpg',"Сертификат", 'Сертификат соответствия Будилова С.Н.') %>
+  		</div>
+  		<div class="col-sm-6 col-md-6">
+    		<%= slide_view('iso','sertificate_expert_puchkin.jpg',"Сертификат", 'Сертификат соответствия Пучкин А.Г.') %>
+  		</div>
+	</div>
+	<h4>Свидетельство СРО на проектирование:</h4>
+	<div class="row nobody">
+		<div class="col-sm-6 col-md-6">
+    		<%= slide_view('sro_proekt','sro_proekt_01.jpg',"Свидетельство", 'Свидетельство СРО на проектирование') %>
+  		</div>
+	</div>
+	<h5>Приложения к свидетельству:</h5>
+	<div class="row nobody">
+		<% 4.times do |n| %>
+		<div class="col-sm-6 col-md-6">
+    		<%= slide_view('sro_proekt',"sro_proekt_0#{n+2}.jpg","Приложение стр.#{n+1}", "Приложение к свидетельству СРО на проектирование стр. #{n+1}") %>
+  		</div>
+  		<% end %>
+	</div>
+
+	<h4>Свидетельство СРО на строительство:</h4>
+	<div class="row nobody">
+		<div class="col-sm-6 col-md-6">
+    		<%= slide_view('sro_stroit','sro_stroit_01.jpg',"Свидетельство", 'Свидетельство СРО на строительство') %>
+  		</div>
+	</div>
+	<h5>Приложения к свидетельству:</h5>
+	<div class="row nobody">
+		<% 12.times do |n| %>
+		<div class="col-sm-6 col-md-6">
+			<% nm = "#{n+2}" %>
+			<% nm = "0#{nm}" if n < 8 %>
+			<% p nm %>
+    		<%= slide_view('sro_stroit',"sro_stroit_#{nm}.jpg","Приложение стр.#{n+1}", "Приложение к свидетельству СРО на строительство стр. #{n+1}") %>
+  		</div>
+  		<% end %>
+	</div>

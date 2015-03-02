@@ -4,14 +4,15 @@
 	<p id="notice"><%= notice %></p>
 	<div class="show">
 	<p class="caption">
-		<strong>Наименование тэга:</strong>
+		<strong>Наименование проекта:</strong>
 	</p>
 	<p class="value">
   		<%= @project.name %>
 	</p>
 	</div>
-
-
+	<div>
+		<%= image_tag @project.imgurl %>
+	</div>
 	<div class="show">
 	<p class="caption">
 	  <strong>Содержание:</strong>

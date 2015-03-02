@@ -1,0 +1,6 @@
+<blockquote>
+  <a href=<%= "#{projects_path}/?project=#{project.id}" %> >
+  	<h4> <%= markdown(project.name) %> </h4>
+  	<small>ОТРАСЛИ: <%= get_tags_str project %></small>
+  </a>
+</blockquote>

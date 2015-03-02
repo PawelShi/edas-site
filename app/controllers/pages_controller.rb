@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
 
   before_action :news_data
+
   def home
   	@current_page = nil
     
@@ -67,6 +68,18 @@ class PagesController < ApplicationController
     else
       @news = Micropost.first
     end
+  end
+
+  def docs
+    
+  end
+
+  def test
+    render action:'contacts'
+
+    MessageMailer.go_message('schis-pm@yandex.ru').deliver
+    
+    
   end
 
   private 

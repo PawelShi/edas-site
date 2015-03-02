@@ -121,7 +121,7 @@ body {
           // }
           li{
             // border-right: 2px solid $brand-color;
-            width: 20%;
+            width: 18%;
             a {
               // color: $brand-color;
               // text-transform: uppercase;
@@ -316,12 +316,21 @@ body {
 
 div{
   &.text-body{
-    text-indent: 3em;
+    p{
+      text-indent: 3em;
+      a {
+        text-indent: 0;
+      }
+    }
+    .nobody{
+      text-indent: 0;
+    }
     ul li {
       text-indent: 0;
     }
   }
 }
+
 div.show{
 
   .value{
@@ -380,4 +389,8 @@ blockquote {
 .clr-brand{
   color: $brand-bg;
   font-weight: bold;
+}
+
+div.thumbnail:hover{
+  cursor: pointer;
 }

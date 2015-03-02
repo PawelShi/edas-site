@@ -1,15 +1,18 @@
 <div class="menu container">
     <nav class="navbar navbar-default">
   
-        <ul class="nav nav-pills nav-left" role="menu" aria-labelledby="dLabel" id="menu">
+        <ul class="nav nav-pills nav-left" role="navigation" aria-labelledby="dLabel" id="menu">
         <!-- col-sm-6 col-md-6 col-lg-6 -->
-            <li <%= nav_active('about')%> ><%= link_to 'О КОМПАНИИ |', about_path %></li>
+            <%= nav_active 'about', 'О КОМПАНИИ |', about_path %>
+            <!-- <li < nav_active('about')%> ><%= link_to 'О КОМПАНИИ |', about_path %></li> -->
             
-            <li <%= nav_active('tools')%> ><%= link_to 'УСЛУГИ |', tools_path %></li>
+            <%= nav_active 'tools', 'УСЛУГИ |', tools_path %>
             
-            <li <%= nav_active('projects')%> ><%= link_to 'ПРОЕКТЫ |', projects_path %> </li>
+            <%= nav_active 'projects', 'ПРОЕКТЫ |', projects_path %> 
 
-            <li <%= nav_active('contacts')%> ><%= link_to 'КОНТАКТЫ |', contacts_path %> </li>
+            <%= nav_active 'contacts', 'КОНТАКТЫ |', contacts_path %> 
+
+            <%= nav_active 'docs', 'ДОКУМЕНТЫ |', docs_path %> 
         </ul>
     
     </nav>

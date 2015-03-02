@@ -1,6 +1,8 @@
 Edas::Application.routes.draw do
 
-  
+
+  # Тест майлера
+  get 'testmailer' => 'pages#test'
 
   # Админка
   namespace :admin do
@@ -27,6 +29,8 @@ Edas::Application.routes.draw do
   get 'contacts' => 'pages#contacts'
   get 'about'    => 'pages#about'
   get 'news'     => 'pages#news'
+  get 'docs'     => 'pages#docs'
+
   # get 'news/:id' => 'pages#news', as: :news_view
 
   # Превь markdown

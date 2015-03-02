@@ -28,25 +28,18 @@ gallery: projects/
 	<section class="col-md-18">
 		
 		<% unless @project.nil? then %>
-			<div class="project">
-				<blockquote><%= @project.name %></blockquote>
-				<%= markdown(@project.body) %>
-            </div>
+			<%= render "shared/project", locals: {project: @project} %>
+			
         <% else %>
-    		<%= will_paginate @projects %>    
-			<div>
-			  <% @projects.each do |prj| %>
-				<blockquote>
-			  	  <a href=<%= "#{projects_path}/?project=#{prj.id}" %> >
-        			<h4> <%= prj.name %> </h4>
-            		<small>ОТРАСЛИ: <%= get_tags_str prj %></small>
-        	  	  </a>
-        		</blockquote>
-          	  <% end %>
 
-    		</div>
+    		<%= will_paginate @projects %>    
+			<div class="collection">
+				<%= render partial: "shared/project_item", collection: @projects, as: :project %>
+			</div>
     		<%= will_paginate @projects %>
+
     	<% end %>
+    	
 	</section>
 </div>
 

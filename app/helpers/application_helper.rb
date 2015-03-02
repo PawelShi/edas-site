@@ -1,15 +1,7 @@
-module ApplicationHelper
 
-	def image_box(img_src, text, url)
-		str = '<div class="thumbnail noborder nopadding">' +
-            image_tag(img_src, width: "100%" ) +
-            '<div class="caption">
-              <h5 class="text-center">' + text + '</h5>
-            </div>
-          </div>'
-        
-        link_to(raw(str),url)
-	end
+
+module ApplicationHelper
+	# require "img_helper"
 
 	def page_title
 		unless @current_page.nil?
@@ -20,10 +12,15 @@ module ApplicationHelper
 
 	end
 
-	def nav_active(logic)
-		result = ''
-		result = "class=active" if logic == params[:action]
-		result
+	def nav_active(logic, name, url)
+		result = '<li '
+		# puts "nav_active: logic=#{logic} (#{params[:action]})| name=#{name}| url=#{url}"
+		# <li <%= nav_active('about')%> ><%= link_to 'О КОМПАНИИ |', about_path %></li>
+
+		result = result + "class=active" if logic == params[:action]
+		result = result + '>' + link_to(name, url) + '</li>'
+		# result = "class=active" if logic == params[:action]
+		raw(result)
 	end
 
 	def markdown(text)
@@ -53,15 +50,19 @@ module ApplicationHelper
 
   	def get_tags(project)
 		# Возвращает список тэгов
+		
 		project.tags
+
 	end
 
 	def get_tags_str(project)
+		
 		res = ''
 		project.tags.each do |tag|
 			res = "#{res} #{tag.name};"
 		end
 		res
+		
 	end
 
 	def my_parse(text)
@@ -69,20 +70,54 @@ module ApplicationHelper
 		# TEXT - кусок HTML документа
 		# Самая первая вставка - галлерея
 		doc = Nokogiri::HTML::DocumentFragment.parse(text)
-		# 
+		# Ищем все элементы с именем gallery
 		gals = doc.css("gallery")
+		# Проходим по ним
 		gals.each do |gal|
-			# читаем параметры галлереи
+			# puts gal
+			# читаем параметры галлереи и формируем новую строку
 			str = eval("gallery(#{gal.content})")
-			# puts str
+			# поученную строку HTML преобразуем в структурированный фрагмент Nokogiri
 			sub_doc = Nokogiri::HTML::DocumentFragment.parse(str)
-			# меняем
+			# меняем имя элемента на div и добавляем ему класс
+			# puts gal.name
 			gal.name="div"
 			gal['class'] = 'container-fluid'
+			# Уничтожаем контент, что-бы не светился
 			gal.content = ''
+			# Привязываем новую структуру как вложение к элементу Gallery
 			sub_doc.parent = gal
 		end
+
+		icons = doc.css("icon")
+		icons.each do |icon|
+			# puts "Icon.name=#{icon.name}"
+			str = eval("icon(#{icon.content})")
+			# puts str
+			sub_doc = Nokogiri::HTML::DocumentFragment.parse(str)
+			# puts sub_doc
+			# puts sub_doc.name
+			icon.name='img'
+			# puts sub_doc['src']
+			# icon['class'] = ''
+			icon.content = ''
+			icon['src'] = sub_doc['src']
+			# puts icon
+			# sub_doc.parent = icon
+		end
+
+
 		doc.to_html
+	end
+
+	def icon(path)
+		# создание иконки
+		size = nil
+		if size.nil?
+			"<img src='#{path}'>"
+		else
+			"<img src='#{path}'>"
+		end
 	end
 
 	def gallery(path, gallery_name, count, cols)
@@ -99,7 +134,11 @@ module ApplicationHelper
 			# puts "count:#{count}"
 			count.times do |num|
 				# puts "num:#{num}"
-				str = "#{str} <img src='#{path}/240/img_#{num+1}.jpg' alt='...' class='img-thumbnail'>"
+				# str = "#{str} <img src='#{path}/240/img_#{num+1}.jpg' alt='...' class='img-thumbnail'>"
+				a_str = "<img src='#{path}/240/img_#{num+1}.jpg' >"
+				a_str = "<a href='#{path}/1024/img_#{num+1}.jpg' class='thumbnail'>#{a_str}</a>"
+				a_str = "<div class=col-xs-8 col-md-8'> #{a_str}</div>"
+				str ="#{str}#{a_str}"
 
 				next_row = (num+1)/cols
 				# puts "num = #{num} | cur = #{curr_row} | next = #{next_row}"

@@ -12,7 +12,8 @@
 //
 //= require jquery
 //= require bootstrap
-//= require bootstrap-sprockets
+//Если включить - перекрываютсянекоторые функции и например модальное окно мигает
+// --require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
 // require_tree .

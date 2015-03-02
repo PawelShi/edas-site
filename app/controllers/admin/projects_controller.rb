@@ -83,6 +83,6 @@ class Admin::ProjectsController < Admin::BaseController
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
       # tag_ids - метод по которму массив id тэгов получаем. Нужно обязательно указать!!
-      params.require(:project).permit(:name, :body, :tag_ids =>[])
+      params.require(:project).permit(:name, :imgurl, :body, :tag_ids =>[])
     end
 end

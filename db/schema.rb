@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141002095200) do
+ActiveRecord::Schema.define(version: 20141222052556) do
 
   create_table "microposts", force: true do |t|
     t.date     "start_dt"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20141002095200) do
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "imgurl"
   end
 
   add_index "projects", ["name"], name: "index_projects_on_name", unique: true

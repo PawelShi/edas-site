@@ -1,0 +1,13 @@
+<div class="media">
+  <a class="pull-left" href=<%= "#{projects_path}/?project=#{project.id}" %> >
+  	<%= image_tag project.imgurl, height: 64 %>
+  	
+  </a>
+  <a class="media-body" href=<%= "#{projects_path}/?project=#{project.id}" %> >
+  	<h4 class="media-heading">
+  		<%= markdown(project.name) %>
+  	</h4>
+  	<small>ОТРАСЛИ: <%= get_tags_str project %></small>
+
+  </a>
+</div>
