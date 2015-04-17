@@ -19,7 +19,11 @@
     <% @siteconfigs.each do |siteconfig| %>
       <tr>
         <td><%= siteconfig.name %></td>
-        <td><%= siteconfig.value %></td>
+        <td><%= if siteconfig.value.length > 200
+            siteconfig.value[0..200] 
+            else 
+              siteconfig.value 
+            end %></td>
         <td><%= link_to 'Просмотр', admin_siteconfig_path(siteconfig), :class=>'btn btn-success' %></td>
         <td><%= link_to 'Изменить', edit_admin_siteconfig_path(siteconfig), :class=>'btn btn-warning' %></td>
         <td><%= link_to 'Удалить', admin_siteconfig_path(siteconfig), method: :delete, data: { confirm: 'Вы уверены?' }, 
