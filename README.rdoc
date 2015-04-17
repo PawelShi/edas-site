@@ -1,28 +1,30 @@
-== README
+== Конфигурация
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Данные конфигурации хранятся в модели siteonfig.
+ Первый вариант поля модели:
+ - ИД - автоматический
+ - active - boolean     - признак активной записи
+ - title  - string(50)  - заголовок сайта
+ - name - string(100)- имя сайта
+ - caption - string(250)- краткое описание
+ - address1 - string(250) - строка адреса 1
+ - address2 - string(250) - строка адреса 2
+ - email     - string(250) - строка с емайлом
+ - phone_footer - text - строка с телефонами
+ - phone_header - string(100)
+ - logo  - text - логотип и реклама
 
-Things you may want to cover:
+Второй вариант
+ - ИД - автоматическое
+ - name  - string(50) - имя переменной
+ - value - text       - значение переменной
 
-* Ruby version
+ Пример:
+   name	     value
+   title     ООО "ЭДАС"
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
+   Удобство доступа и расширения!!
+ 
+==
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.

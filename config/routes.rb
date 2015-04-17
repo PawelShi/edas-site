@@ -1,6 +1,5 @@
 Edas::Application.routes.draw do
 
-
   # Тест майлера
   get 'testmailer' => 'pages#test'
 
@@ -14,6 +13,7 @@ Edas::Application.routes.draw do
     resources :services
     resources :tags
     resources :projects
+    resources :siteconfigs
   end
 
   # Странички

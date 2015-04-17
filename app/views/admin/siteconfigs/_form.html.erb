@@ -1,0 +1,25 @@
+<%= form_for([:admin,@siteconfig]) do |f| %>
+  <% if @siteconfig.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@siteconfig.errors.count, "error") %> prohibited this siteconfig from being saved:</h2>
+
+      <ul>
+      <% @siteconfig.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label 'Имя параметра' %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="form-group">
+    <%= f.label 'Значение' %><br>
+    <%= f.text_area :value %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Принять', :class => 'btn btn-success' %>
+  </div>
+<% end %>

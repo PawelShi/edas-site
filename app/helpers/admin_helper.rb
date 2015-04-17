@@ -11,6 +11,13 @@ module AdminHelper
 				when :rp then 'новость'
 				else 'новостей'
 			end
+		when :siteconfig
+			case padeg
+				when :ip then 'параметры'
+				when :dp then 'параметры'
+				when :rp then 'параметр'
+				else 'параметров'
+			end
 		when :user 
 			case padeg
 			when :ip then 'пользователь'

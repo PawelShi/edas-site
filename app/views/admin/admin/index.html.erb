@@ -1,5 +1,13 @@
 <div class="container-fluid">
-	<h3 >Справочники</h3>	
+    <h3>Настройки</h3>
+    <div class="list-group">
+        <a href="<%= eval(nsi_path(:siteconfig, :list, params)) %>" class="list-group-item">
+            <h4 class="list-group-item-heading">Параметры сайта</h4>
+            <p class="list-group-item-text">Название, заголовок, адреса, телефоны и пр...</p>
+        </a>
+    </div>
+
+	<h3>Справочники</h3>	
 	<div class="list-group">
 		
 		<a href="<%= eval(nsi_path(:micropost, :list, params)) %>" class="list-group-item">

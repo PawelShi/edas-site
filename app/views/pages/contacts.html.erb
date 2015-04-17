@@ -12,14 +12,13 @@
 	</div>
 
 	<div>
-		<p>614077, г. Пермь,<br/>
-		бульвар Гагарина, д. 65а/1, оф. 156
+		<p>	<%= CFG(:address1) %><br/>
+			<%= CFG(:address2) %>
 		</p>
-		<p>ООО "ЭДАС"</p>
-		<p>Телефон: +7 (342) 257-20-88 <br/>
-			Факс: +7 (342) 257-21-12
+		<p><%= CFG(:name) %></p>
+		<p><%= CFG(:phone_footer) %>
 		</p>
-		<p class="clr-brand"><a href='mailto:edas-perm@yandex.ru'>E-mail: edas-perm@yandex.ru</a></p>
+		<p><%= CFG(:email) %></p>
 		<p><a href='www.edas-design.ru'> www.edas-design.ru </a></p>
 	</div>
 

@@ -1,0 +1,33 @@
+<div class="container-fluid">
+
+  <!-- < render 'navbar'  -->
+  <%= nsi_navbar :siteconfig %>
+
+
+<table class='table table-striped'>
+  <thead>
+    <tr>
+      <th>Имя параметра</th>
+      <th>Значение</th>
+      <th>Действия</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @siteconfigs.each do |siteconfig| %>
+      <tr>
+        <td><%= siteconfig.name %></td>
+        <td><%= siteconfig.value %></td>
+        <td><%= link_to 'Просмотр', admin_siteconfig_path(siteconfig), :class=>'btn btn-success' %></td>
+        <td><%= link_to 'Изменить', edit_admin_siteconfig_path(siteconfig), :class=>'btn btn-warning' %></td>
+        <td><%= link_to 'Удалить', admin_siteconfig_path(siteconfig), method: :delete, data: { confirm: 'Вы уверены?' }, 
+          :class=>'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+</div>

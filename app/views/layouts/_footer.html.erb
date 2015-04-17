@@ -3,46 +3,31 @@
     <div class="row">
 
       <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 address">
-        <h3> <!-- <i style="color:white;" class="fa fa-map-marker"></i> -->
-          Адрес
-        </h3>
+        <h3> Адрес </h3>
         <p>
-          614077, г. Пермь,
+          <%= CFG(:address1) %>
           <br>
-          бульвар Гагарина, 65а/1 оф. 156
-          <br></p>
+          <%= CFG(:address2) %>
+          <br>
+          </p>
       </div>
 
       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 phones">
-        <h3> <!-- <i style="color:white;" class="fa fa-phone"></i> -->
-          Телефоны
-        </h3>
-        <p> <abbr title="Телефон:">Телефон:</abbr>
-          +7 (342) 257-20-88
-          <br> <abbr title="Факс:">Факс:</abbr>
-          +7(342) 257-21-12
-          <br>
-          <abbr title="Мобильный телефон:">Моб.тел.:</abbr>
-          +7 (902) 835-17-41
+        <h3> Телефоны </h3>
+        <p> <%= CFG(:phone_footer) %>
         </p>
       </div>
 
       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 mail">
-        <h3>
-          <!-- <i style="color:white;" class="fa fa-envelope-o"></i> -->
-          Почта
-        </h3>
+        <h3> Почта </h3>
         <p>
-          <a href="mailto:edas-perm@yandex.ru">edas-perm@yandex.ru</a>
+          <%= CFG(:email) %>
         </p>
       </div>
       
       <div class="logo">
         
-        <p>
-          Design by <b><a href="mailto:schis-pm@yandex.ru">PawelShi</a></b>
-        </p>
-        <a href="http://beget.ru?id=78219" target="_blank"><img src="http://www.beget.ru/banners/001.gif" border="0"></a>
+        <%= CFG(:logo) %>
       </div>
 
     </div>  

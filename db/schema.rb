@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141222052556) do
+ActiveRecord::Schema.define(version: 20150409052905) do
 
   create_table "microposts", force: true do |t|
     t.date     "start_dt"
@@ -49,6 +49,13 @@ ActiveRecord::Schema.define(version: 20141222052556) do
   end
 
   add_index "services", ["name"], name: "index_services_on_name", unique: true
+
+  create_table "siteconfigs", force: true do |t|
+    t.string   "name",       limit: 50
+    t.text     "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tags", force: true do |t|
     t.string   "name"
