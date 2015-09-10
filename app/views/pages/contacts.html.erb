@@ -11,14 +11,16 @@
 		<h4 class="pull-right clr-brand" >КОНТАКТЫ</h4>
 	</div>
 
-	<div>
-		<p>	<%= CFG(:address1) %><br/>
-			<%= CFG(:address2) %>
-		</p>
-		<p><%= CFG(:name) %></p>
-		<p><%= CFG(:phone_footer) %>
-		</p>
-		<p><%= CFG(:email) %></p>
+	<div class="well">
+		<address>
+  			<strong><%= CFG(:name) %>:</strong><br>
+  			<%= CFG(:address1) %><br/>
+			<%= CFG(:address2) %><br>
+			<br>
+			<%= CFG(:phone_footer) %><br>
+			<%= CFG(:email) %>
+		</address>
+		
 		<p><a href='www.edas-design.ru'> www.edas-design.ru </a></p>
 	</div>
 
